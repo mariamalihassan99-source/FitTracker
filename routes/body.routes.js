@@ -45,7 +45,7 @@ router.put('/:id', isSignedIn, async (req, res) => {
   res.redirect('/measurements');
 });
 
-router.get('/edit/:id', isSignedIn, async (req, res) => {
+router.get('/edit/:id', isSignedIn, async (req, res) => {   // Render the edit form for a specific measurement
   const measurement = await BodyMeasurements.findById(req.params.id);
   res.render('edit.body', { measurement });
 });

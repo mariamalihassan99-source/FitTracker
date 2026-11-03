@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <h2>Add New Measurement</h2>
+    <form action="/measurements" method="POST">
+        <label for="weight">Weight:</label>
+        <input type="number" name="weight" id="weight" required>
+        <br>
+        <label for="height">Height:</label>
+        <input type="number" name="height" id="height" required>
+        <br>
+        <label for="chest">Chest:</label>
+        <input type="number" name="chest" id="chest">
+        <br>
+        <label for="waist">Waist:</label>
+        <input type="number" name="waist" id="waist">
+        <br>
+        <label for="hips">Hips:</label>
+        <input type="number" name="hips" id="hips">
+        <br>
+        <label for="goal">Your weight goal:</label>
+        <input type="text" name="goal" id="goal">
+        <br>
+        <button type="submit">Add Measurement</button>
+    </form>
+    
+            <h2>Your Body Measurements</h2>
+
+     <ul>
+        <% measurements.forEach(measurement => { %>
+            <li>
+                Date: <%= measurement.date.toDateString() %>, 
+                Weight: <%= measurement.weight %>, 
+                Height: <%= measurement.height %>, 
+                Chest: <%= measurement.chest %>, 
+                Waist: <%= measurement.waist %>, 
+                Hips: <%= measurement.hips %>, 
+                Goal: <%= measurement.goal %>
+                <form action="/measurements/<%= measurement._id %>?_method=DELETE" method="POST" style="display:inline;">
+                    <button type="submit">Delete</button>
+                </form>
+                <form action="/measurements/<%= measurement._id %>?_method=PUT" method="POST" style="display:inline;">
+                    <button type="submit">Edit</button>
+                </form>
+            </li>
+        <% }) %>
+        
+    </ul>
+</body>
+</html>

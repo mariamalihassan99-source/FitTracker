@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Home</title>
+</head>
+<body>
+    <%- include('../partials/navbar') %>
+
+    <h1>Weight Measurement</h1>
+
+     <form action="/measurements<%= measurement._id %>?_method=PUT" method="POST">    
+        <label for="weight">Weight:</label>
+        <input type="number" name="weight" id="weight" value="<%= measurement.weight %>" required>
+        <br>
+        <label for="height">Height:</label>
+        <input type="number" name="height" id="height" value="<%= measurement.height %>" required>
+        <br>
+        <label for="chest">Chest:</label>
+        <input type="number" name="chest" id="chest" value="<%= measurement.chest %>">
+        <br>
+        <label for="waist">Waist:</label>
+        <input type="number" name="waist" id="waist" value="<%= measurement.waist %>">
+        <br>
+        <label for="hips">Hips:</label>
+        <input type="number" name="hips" id="hips" value="<%= measurement.hips %>">
+        <br>
+        <label for="goal">Your weight goal:</label>
+        <input type="text" name="goal" id="goal" value="<%= measurement.goal %>">
+        <br>
+        <button type="submit">Update Measurement</button>
+    </form>
+    
+</body>
+</html>

@@ -10,7 +10,7 @@ router.get('/', isSignedIn, async (req, res) => {
 
   res.render('body/index', { measurements });
 });
-
+/// Create a new body measurement
 router.post('/', isSignedIn, async (req, res) => {
   const { weight, height, chest, waist, hips, goal } = req.body;
 
@@ -47,8 +47,9 @@ router.put('/:id', isSignedIn, async (req, res) => {
 
 router.get('/edit/:id', isSignedIn, async (req, res) => {   // Render the edit form for a specific measurement
   const measurement = await BodyMeasurements.findById(req.params.id);
-  res.render('edit.body', { measurement });
+  res.render('body/edit.ejs', { measurement });
 });
+
 
 
 

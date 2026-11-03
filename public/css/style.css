@@ -40,6 +40,8 @@ a{
     transition: border-bottom 0.3s;
     padding-bottom: 2px;
 
+
+
     
 }
 
@@ -47,3 +49,17 @@ a:hover {
     border-bottom: 2px solid rgb(90, 46, 179);
 
 }
+
+button {
+    font-family: edu-qld-hand-uniquifier;
+    background-color: rgb(90, 46, 179);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: rgb(70, 36, 139);
+}   

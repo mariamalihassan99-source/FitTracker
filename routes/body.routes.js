@@ -27,10 +27,12 @@ router.post('/', isSignedIn, async (req, res) => {
   res.redirect('/measurements');
 });
 
-router.delete('/:id', isSignedIn, async (req, res) => {
-  await BodyMeasurements.findByIdAndDelete(req.params.id);
-  res.redirect('/measurements');
+router.get('/edit/:id', isSignedIn, async (req, res) => {   // Render the edit form for a specific measurement
+  const measurement = await BodyMeasurements.findById(req.params.id);
+  res.render('body/edit.ejs', { measurement });
+  
 });
+
 
 router.put('/:id', isSignedIn, async (req, res) => {
   const { weight, height, chest, waist, hips, goal } = req.body;
@@ -45,10 +47,12 @@ router.put('/:id', isSignedIn, async (req, res) => {
   res.redirect('/measurements');
 });
 
-router.get('/edit/:id', isSignedIn, async (req, res) => {   // Render the edit form for a specific measurement
-  const measurement = await BodyMeasurements.findById(req.params.id);
-  res.render('body/edit.ejs', { measurement });
+router.delete('/:id', isSignedIn, async (req, res) => {
+  await BodyMeasurements.findByIdAndDelete(req.params.id);
+  res.redirect('/measurements');
 });
+
+
 
 
 

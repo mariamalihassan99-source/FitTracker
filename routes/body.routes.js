@@ -3,12 +3,14 @@ const BodyMeasurements = require('../models/BodyMeasurements.js');
 const isSignedIn = require('../middleware/is-signed-in.js');
 
 // Routes for body measurements
-router.get('/', isSignedIn, async (req, res) => {
-  const measurements = await BodyMeasurements.find({
-    userId: req.session.user._id
-  });
 
-  res.render('body/index', { measurements });
+router.get('/', isSignedIn, async (req, res) => {
+  const measurements = await BodyMeasurements
+    .find({ userId: req.session.user._id }) //to make sure we only get measurements for the signed-in user
+    .sort({ date: -1 }); // Sort measurements by date in descending order to compare the most recent measurements first
+  res.render('body/index', {
+    measurements
+  });
 });
 /// Create a new body measurement
 router.post('/', isSignedIn, async (req, res) => {

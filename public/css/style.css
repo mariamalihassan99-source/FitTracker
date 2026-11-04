@@ -117,11 +117,12 @@ a:hover {
 
 /* measurement layout */
 .measurement-layout {
-    margin-top: 20px;
+    margin-top: 30px;
 }
 
 .measurement-layout {
     display: flex;
+    flex-direction: row;
    
     
 }
@@ -134,7 +135,7 @@ a:hover {
 }
 
 .image-section img {
-    width: 100px;
+    width: 600px;
     border-radius: 40px;
     padding: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);

@@ -1,3 +1,20 @@
+<%
+const calories = Number(latestProgress?.caloriesBurned || 0);
+const exercise = Number(latestProgress?.duration || 0);
+const steps = Number(latestProgress?.steps || 0);
+const water = Number(latestProgress?.waterAmount || 0);
+
+const caloriesPercent = Math.min(calories / 760, 1);
+const exercisePercent = Math.min(exercise / 60, 1);
+const stepsPercent = Math.min(steps / 8000, 1);
+const waterPercent = Math.min(water / 2500, 1);
+%>
+
+
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,58 +34,67 @@
     <h3>FitTrack</h3>
 
 
-     <section class="activity-card">
-            <h2>Activity Rings</h2>
+     
+<section class="activity-card">
+    <h2>Activity Rings</h2>
 
-            <div class="activity-content">
+    <div class="activity-content">
 
-                <div class="rings">
-                    <svg viewBox="0 0 240 240">
-                        <circle class="ring move-bg" cx="120" cy="120" r="100"/>
-                        <circle class="ring move-progress" cx="120" cy="120" r="100"/>
+        <div class="rings">
+            <svg viewBox="0 0 240 240">
 
-                        <circle class="ring exercise-bg" cx="120" cy="120" r="76"/>
-                        <circle class="ring exercise-progress" cx="120" cy="120" r="76"/>
+                <!-- Calories -->
+                <circle class="ring move-bg" cx="120" cy="120" r="100"/>
+                <circle class="ring move-progress"
+                    cx="120" cy="120" r="100"
+                    style="stroke-dashoffset: <%= 628.32 * (1 - caloriesPercent) %>"/>
 
-                        <circle class="ring stand-bg" cx="120" cy="120" r="52"/>
-                        <circle class="ring stand-progress" cx="120" cy="120" r="52"/>
-                    </svg>
-                </div>
+                <!-- Exercise -->
+                <circle class="ring exercise-bg" cx="120" cy="120" r="76"/>
+                <circle class="ring exercise-progress"
+                    cx="120" cy="120" r="76"
+                    style="stroke-dashoffset: <%= 477.52 * (1 - exercisePercent) %>"/>
 
-               <div class="activity-details">
+                <!-- Steps -->
+                <circle class="ring steps-bg" cx="120" cy="120" r="52"/>
+                <circle class="ring steps-progress"
+                    cx="120" cy="120" r="52"
+                    style="stroke-dashoffset: <%= 326.73 * (1 - stepsPercent) %>"/>
 
-    <div>
-        <h2>Calories Burned</h2>
-        <p class="pink">
-            <%= latestProgress?.caloriesBurned || 0 %>/760 KCAL
-        </p>
-    </div>
+                <!-- Water -->
+                <circle class="ring water-bg" cx="120" cy="120" r="28"/>
+                <circle class="ring water-progress"
+                    cx="120" cy="120" r="28"
+                    style="stroke-dashoffset: <%= 175.93 * (1 - waterPercent) %>"/>
 
-    <div>
-        <h2>Exercise</h2>
-        <p class="green">
-            <%= latestProgress?.duration || 0 %>/60 MIN
-        </p>
-    </div>
+            </svg>
+        </div>
 
-    <div>
-        <h2>Steps</h2>
-        <p class="purple">
-            <%= latestProgress?.steps || 0 %>/8,000 STEPS
-        </p>
-    </div>
+        <div class="activity-details">
 
-    <div>
-        <h2>Water</h2>
-        <p class="blue">
-            <%= latestProgress?.waterAmount || 0 %>/2,500 ML
-        </p>
-    </div>
-
-</div>
-
+            <div>
+                <h2>Calories Burned</h2>
+                <p class="pink"><%= calories %>/760 KCAL</p>
             </div>
-        </section>
-    
+
+            <div>
+                <h2>Exercise</h2>
+                <p class="green"><%= exercise %>/60 MIN</p>
+            </div>
+
+            <div>
+                <h2>Steps</h2>
+                <p class="purple"><%= steps %>/8,000 STEPS</p>
+            </div>
+
+            <div>
+                <h2>Water</h2>
+                <p class="blue"><%= water %>/2,500 ML</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
 </body>
 </html>

@@ -17,9 +17,8 @@ const passUserToView = require("./middleware/pass-user-to-view.js");
 const authController = require("./routes/auth.routes.js");
 const indexController = require("./routes/index.routes.js");
 const bodyController = require("./routes/body.routes.js"); 
-
-
 const dailyController = require("./routes/Daily.routes.js");
+const homeController = require("./routes/home.routes.js"); 
 // Middleware
 app.use(express.static('public')) // my app will serve all static files from public folder
 app.use(express.urlencoded({ extended: false }));
@@ -63,6 +62,7 @@ app.use('/auth',authController)
 app.use('/',indexController)
 app.use('/measurements', bodyController)
 app.use('/daily', dailyController)
+app.use('/home', homeController)
 
 
 

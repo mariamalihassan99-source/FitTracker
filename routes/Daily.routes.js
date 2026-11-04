@@ -5,50 +5,42 @@ const isSignedIn = require('../middleware/is-signed-in.js');
 
 
 router.get('/', isSignedIn, async (req, res) => {
-  const dailyProgress = await DailyProgress
-    .find({ userId: req.session.user._id })
-    .sort({ date: -1 });
-  res.render('body/daily', { dailyProgress });
-});
+  const progresses = await DailyProgress.find({
+    userId: req.session.user._id
+  }).sort({ date: -1 });
 
+  const latestProgress = progresses[0];
+
+  res.render('body/daily', {
+    progresses,
+    latestProgress
+  });
+});
 // Create a new daily progress entry
 router.post('/', isSignedIn, async (req, res) => {
-  const { date, weight, calories, exercise } = req.body;
+  const { date, weight, caloriesBurned, workoutType , duration,  sleepHours , waterAmount , steps} = req.body;
   await DailyProgress.create({
     userId: req.session.user._id,
     date,
+    workoutType ,
+    duration,
+    caloriesBurned,
     weight,
-    calories,
-    exercise
+    waterAmount,
+    sleepHours,
+    steps,
   });
   res.redirect('/daily');
+  
 });
 
-// Edit a specific daily progress entry
-router.get('/edit/:id', isSignedIn, async (req, res) => {
-  const entry = await DailyProgress.findById(req.params.id);
-  res.render('body/edit', { entry });
-});
 
-// Update a specific daily progress entry
-router.put('/:id', isSignedIn, async (req, res) => {
-  const { date, weight, calories, exercise, water , sleep } = req.body;
-  await DailyProgress.findByIdAndUpdate(req.params.id, {
-    date,
-    weight,
-    calories,
-    exercise,
-    water,
-    sleep
-  });
-  res.redirect('/daily');
-});
 
-// Delete a specific daily progress entry
-router.delete('/:id', isSignedIn, async (req, res) => {
-  await DailyProgress.findByIdAndDelete(req.params.id);
-  res.redirect('/daily');
-}); 
+
+
+
+
+
 
 
 

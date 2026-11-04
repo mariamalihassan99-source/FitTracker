@@ -8,6 +8,15 @@ router.get('/', isSignedIn, async (req, res) => {
   const measurements = await BodyMeasurements
     .find({ userId: req.session.user._id }) //to make sure we only get measurements for the signed-in user
     .sort({ date: -1 }); // Sort measurements by date in descending order to compare the most recent measurements first
+
+
+    for(let i = 0; i < measurements.length; i++) {
+        if(!measurements[i - 1]) continue
+
+        measurements[i].weightChange = measurements[i].weight - measurements[i - 1].weight;
+    }
+
+    console.log(measurements)
   res.render('body/index', {
     measurements
   });

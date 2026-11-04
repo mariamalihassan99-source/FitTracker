@@ -1,74 +1,273 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+
+    <title>Daily Tracker | FitTrack</title>
+
     <link rel="stylesheet" href="/css/style.css">
 
-  <style>
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Edu+QLD+Hand:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
-</style>
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
+    </style>
 </head>
+
 <body>
+
     <%- include('../partials/navbar') %>
 
     <main class="daily-tracker-main">
 
+        <!-- Page Header -->
+
         <header class="daily-tracker-header">
-    <div>
-    <h2>Daily tracker</h2>
-     <p>Track your daily fitness journey</p>
-    </div>
-    <input type="date" id="progressDate">
-    </header>
-    
 
-    <!-- Daily tracker content goes here -->
+            <div>
+                <h2>Daily Tracker</h2>
+                <p>Track your daily fitness journey</p>
+            </div>
 
-    <section class="daily-tracker-content">
+        </header>
 
-        <div class="daily-tracker-entry">
-             <span>⚖️</span>
+
+        <!-- Daily Summary Cards -->
+
+        <section class="daily-tracker-content">
+
+            <div class="daily-tracker-entry">
+                <span>⚖️</span>
                 <p>Weight</p>
-                <h2>60 kg</h2>
-        </div>
+                <h2><%= latestProgress ? latestProgress.weight + ' kg' : ' ' %></h2>
+            </div>
 
-
-      <div class="daily-tracker-entry">
+            <div class="daily-tracker-entry">
                 <span>🔥</span>
                 <p>Calories Burned</p>
-                <h2>350 kcal</h2>
+                <h2><%= latestProgress ? latestProgress.caloriesBurned + ' kcal' : ' ' %></h2>
             </div>
 
             <div class="daily-tracker-entry">
-               <span>💧</span>
-               <p>Water Intake</p>
-               <h2>2 L</h2>
+                <span>💧</span>
+                <p>Water Intake</p>
+                <h2><%= latestProgress ? latestProgress.waterAmount + ' ml' : ' ' %></h2>
             </div>
 
             <div class="daily-tracker-entry">
-               <span>🏃‍♂️</span>
-               <p>Steps</p>
-               <h2>10,000</h2>
+                <span>🏃</span>
+                <p>Steps</p>
+                <h2><%= latestProgress ? latestProgress.steps : ' ' %></h2>
             </div>
 
             <div class="daily-tracker-entry">
-               <span>🌙</span>
-               <p>Sleep</p>
-               <h2>8 hrs</h2>
+                <span>🌙</span>
+                <p>Sleep Hours</p>
+                <h2><%= latestProgress ? latestProgress.sleepHours + ' hrs' : ' ' %></h2>
             </div>
 
-    </section>
+        </section>
 
 
+        <!-- Daily Progress Form -->
+
+        <section class="daily-tracker-form">
+
+            <h2>Log Your Daily Progress</h2>
+
+            <form action="/daily" method="POST">
+
+                <div class="form-grid">
+
+                    <!-- Date -->
+
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
 
 
+                    <!-- Weight -->
+
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight"
+                        step="0.1" min="0" placeholder="Enter your weight">
+                    </div>
 
 
+                    <!-- Calories -->
 
+                    <div class="form-group">
+                        <label for="caloriesBurned">Calories Burned</label>
+                        <input type="number" id="caloriesBurned"
+                        name="caloriesBurned" min="0"
+                        placeholder="Enter calories">
+                    </div>
+
+
+                    <!-- Water -->
+
+                    <div class="form-group">
+                        <label for="waterAmount">Water Intake (ml)</label>
+                        <input type="number" id="waterAmount"
+                        name="waterAmount" min="0"
+                        placeholder="Enter water amount">
+                    </div>
+
+
+                    <!-- Steps -->
+
+                    <div class="form-group">
+                        <label for="steps">Steps</label>
+                        <input type="number" id="steps"
+                        name="steps" min="0"
+                        placeholder="Enter your steps">
+                    </div>
+
+
+                    <!-- Sleep -->
+
+                    <div class="form-group">
+                        <label for="sleepHours">Sleep Hours</label>
+                        <input type="number" id="sleepHours"
+                        name="sleepHours" min="0" max="24"
+                        step="0.5" placeholder="Enter sleep hours">
+                    </div>
+
+
+                    <!-- Exercise Type -->
+
+                    <div class="form-group">
+                        <label for="workoutType">Exercise Type</label>
+
+                        <select id="workoutType" name="workoutType" required>
+
+                            <option value="">Select exercise</option>
+                            <option value="Strength">Strength</option>
+                            <option value="Cardio">Cardio</option>
+                            <option value="Pilates">Pilates</option>
+                            <option value="Walking">Walking</option>
+                            <option value="Yoga">Yoga</option>
+                            <option value="Boxing">Boxing</option>
+
+                        </select>
+                    </div>
+
+
+                    <!-- Exercise Duration -->
+
+                    <div class="form-group">
+                        <label for="duration">Exercise Duration (minutes)</label>
+                        <input type="number" id="duration"
+                        name="duration" min="0"
+                        placeholder="Enter duration">
+                    </div>
+
+                </div>
+
+
+                <!-- Workout Checkbox -->
+
+                <label class="workout-checkbox">
+                    <input type="checkbox" name="isChecked" value="true">
+                    Workout Completed
+                </label>
+
+
+                <!-- Submit Button -->
+
+                <button type="submit" class="save-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Log Progress
+                </button>
+
+            </form>
+
+        </section>
+
+
+        <!-- Daily Progress History -->
+
+        <section class="daily-progress-entries">
+
+            <h2>Progress History</h2>
+
+            <% if (progresses && progresses.length > 0) { %>
+
+                <% progresses.forEach(entry => { %>
+
+                    <div class="progress-record">
+
+                        <h3>Daily Record</h3>
+
+                        <p>
+                            <strong>Date:</strong>
+                            <%= entry.date instanceof Date
+                                ? entry.date.toDateString()
+                                : entry.date %>
+                        </p>
+
+                        <p>
+                            <strong>Weight:</strong>
+                            <%= entry.weight %> kg
+                        </p>
+
+                        <p>
+                            <strong>Calories:</strong>
+                            <%= entry.caloriesBurned %> kcal
+                        </p>
+
+                        <p>
+                            <strong>Water:</strong>
+                            <%= entry.waterAmount %> ml
+                        </p>
+
+                        <p>
+                            <strong>Steps:</strong>
+                            <%= entry.steps %>
+                        </p>
+
+                        <p>
+                            <strong>Sleep:</strong>
+                            <%= entry.sleepHours %> hours
+                        </p>
+
+                        <p>
+                            <strong>Exercise:</strong>
+                            <%= entry.workoutType %>
+                        </p>
+
+                        <p>
+                            <strong>Duration:</strong>
+                            <%= entry.duration %> minutes
+                        </p>
+
+                        <p>
+                            <strong>Completed:</strong>
+                            <%= entry.isChecked ? 'Yes' : 'No' %>
+                        </p>
+
+                    </div>
+
+                <% }) %>
+
+            <% } else { %>
+
+                <p class="no-records">
+                    No daily progress records yet.
+                    Start tracking your fitness journey!
+                </p>
+
+            <% } %>
+
+        </section>
 
     </main>
+
 </body>
 </html>

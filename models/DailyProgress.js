@@ -23,14 +23,20 @@ const dailyProgressSchema = new mongoose.Schema({
     },
     waterAmount: {
         type: Number,
-        required: true
+        required: true,
+       
     },
     sleepHours: {
         type: Number,
-        required: true
+        required: true,
+        max: 24
     },
+    weight: {
+        type: Number,
+        required: true
+    }
 
 
-});
+}, { timestamps: true });
 
 module.exports = mongoose.model('DailyProgress', dailyProgressSchema);  

@@ -59,7 +59,14 @@
             <p><strong>Waist:</strong> <%= measurement.waist %> cm</p>
             <p><strong>Hips:</strong> <%= measurement.hips %> cm</p>
             <p><strong>Goal:</strong> <%= measurement.goal %></p>
-
+            <% if(measurement.weightChange !== undefined ) {  %>
+            <p><strong>Weight Change:</strong> <b class="<%= measurement.weightChange > 0 ? 'up' : 'down' %>"><%= measurement.weightChange || 0 %></b> kg</p>
+            <% if (measurement.weightChange > 0) { %>
+                <p class="up">Weight increased</p>
+            <% } else if (measurement.weightChange < 0) { %>
+                <p class="down">Well done! Keep up the good work!</p>
+            <% } %>
+            <% } %>
             <div class="buttons">
 
                 <form action="/measurements/<%= measurement._id %>?_method=DELETE" method="POST">

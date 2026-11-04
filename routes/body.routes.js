@@ -12,8 +12,10 @@ router.get('/', isSignedIn, async (req, res) => {
 });
 /// Create a new body measurement
 router.post('/', isSignedIn, async (req, res) => {
-  const { weight, height, chest, waist, hips, goal } = req.body;
+console.log('POST HIT');
+  console.log(req.body);
 
+  const { weight, height, chest, waist, hips, goal } = req.body;
   await BodyMeasurements.create({
     userId: req.session.user._id,
     weight,
@@ -47,7 +49,7 @@ router.put('/:id', isSignedIn, async (req, res) => {
   });
   res.redirect('/measurements');
 });
-
+// delete a specific body measurement
 router.delete('/:id', isSignedIn, async (req, res) => {
   await BodyMeasurements.findByIdAndDelete(req.params.id);
   res.redirect('/measurements');

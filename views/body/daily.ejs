@@ -106,7 +106,7 @@
                         <label for="caloriesBurned">Calories Burned</label>
                         <input type="number" id="caloriesBurned"
                         name="caloriesBurned" min="0"
-                        placeholder="Enter calories">
+                        placeholder="Enter calories">  <!-- placeholder for calories  because it is required means user must enter a value -->
                     </div>
 
 
@@ -195,7 +195,7 @@
 
         <section class="daily-progress-entries">
 
-            <h2>Progress History</h2>
+           
 
             <% if (progresses && progresses.length > 0) { %>
 
@@ -203,7 +203,7 @@
 
                     <div class="progress-record">
 
-                        <h3>Daily Record</h3>
+                        <h2>Daily Record</h2>
 
                         <p>
                             <strong>Date:</strong>
@@ -212,47 +212,8 @@
                                 : entry.date %>
                         </p>
 
-                        <p>
-                            <strong>Weight:</strong>
-                            <%= entry.weight %> kg
-                        </p>
-
-                        <p>
-                            <strong>Calories:</strong>
-                            <%= entry.caloriesBurned %> kcal
-                        </p>
-
-                        <p>
-                            <strong>Water:</strong>
-                            <%= entry.waterAmount %> ml
-                        </p>
-
-                        <p>
-                            <strong>Steps:</strong>
-                            <%= entry.steps %>
-                        </p>
-
-                        <p>
-                            <strong>Sleep:</strong>
-                            <%= entry.sleepHours %> hours
-                        </p>
-
-                        <p>
-                            <strong>Exercise:</strong>
-                            <%= entry.workoutType %>
-                        </p>
-
-                        <p>
-                            <strong>Duration:</strong>
-                            <%= entry.duration %> minutes
-                        </p>
-
-                        <p>
-                            <strong>Completed:</strong>
-                            <%= entry.isChecked ? 'Yes' : 'No' %>
-                        </p>
-
-                    </div>
+                        
+                    <a href="/daily/history">View Full History</a>  
 
                 <% }) %>
 
@@ -262,6 +223,7 @@
                     No daily progress records yet.
                     Start tracking your fitness journey!
                 </p>
+                
 
             <% } %>
 

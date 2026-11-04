@@ -9,7 +9,10 @@ router.get('/', isSignedIn, async (req, res) => {
     userId: req.session.user._id
   }).sort({ date: -1 });
 
+  console.log(req.session.user._id);
+
   const latestProgress = progresses[0];
+  console.log(latestProgress);
 
   res.render('body/daily', {
     progresses,
@@ -29,9 +32,21 @@ router.post('/', isSignedIn, async (req, res) => {
     waterAmount,
     sleepHours,
     steps,
+
   });
   res.redirect('/daily');
   
+});
+
+
+router.get('/history', isSignedIn, async (req, res) => {
+  const progresses = await DailyProgress.find({
+    userId: req.session.user._id
+  }).sort({ date: -1 });
+
+  res.render('body/daily-history', {
+    progresses
+  });
 });
 
 

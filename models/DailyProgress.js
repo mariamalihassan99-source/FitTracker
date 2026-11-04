@@ -34,6 +34,10 @@ const dailyProgressSchema = new mongoose.Schema({
     weight: {
         type: Number,
         required: true
+    },
+    userId:{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'User',
     }
 
 

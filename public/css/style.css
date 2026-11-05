@@ -418,19 +418,24 @@ a:hover {
 }
 
 
-/* Activity Rings */
+
+
+
+
+/* Homepage */
 
 .home-container {
     padding: 30px;
-    color: white;
+    color: rgb(113, 61, 158);
+    font-family: 'Bodoni Moda', serif;
 }
 
-.home-container h1 {
-    font-size: 35px;
-}
+
+
+/* Activity Card */
 
 .activity-card {
-    background: linear-gradient(135deg, #938de9, #e1dee7);;
+    background: linear-gradient(135deg, #938de9, #e1dee7);
     padding: 30px 40px;
     border-radius: 30px;
     max-width: 1000px;
@@ -441,6 +446,8 @@ a:hover {
 .activity-card h2 {
     font-size: 30px;
 }
+
+/* Activity Layout */
 
 .activity-content {
     display: flex;
@@ -457,35 +464,57 @@ a:hover {
     transform: rotate(-90deg);
 }
 
+/* Ring Backgrounds */
+
 .ring {
     fill: none;
     stroke-width: 18;
 }
 
-.move-bg { stroke: #4b1157; }
-.exercise-bg { stroke: #815eb1; }
-.stand-bg { stroke: #e8e8ed; }
+.move-bg {
+    stroke: #ece5ed;
+}
+
+.exercise-bg {
+    stroke: #cccacf;
+}
+
+.steps-bg {
+    stroke: #e8e8ed;
+}
+
+.water-bg {
+    stroke: #c9c1df;
+}
+
+/* Ring Progress */
+
+.ring-progress {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease;
+}
 
 .move-progress {
-    stroke: #8577b9;
-    stroke-dasharray: 628;
-    stroke-dashoffset: 510;
-    stroke-linecap: round;
+    stroke: #8d73da;
+    stroke-dasharray: 628.32;
 }
 
 .exercise-progress {
-    stroke: #3b2e5a;
-    stroke-dasharray: 478;
-    stroke-dashoffset: 478;
-    stroke-linecap: round;
+    stroke: #442885;
+    stroke-dasharray: 477.52;
 }
 
-.stand-progress {
-    stroke: #625688;
-    stroke-dasharray: 327;
-    stroke-dashoffset: 41;
-    stroke-linecap: round;
+.steps-progress {
+    stroke: #5c3fb9;
+    stroke-dasharray: 326.73;
 }
+
+.water-progress {
+    stroke:  #63529f;
+    stroke-dasharray: 175.93;
+}
+
+/* Activity Details */
 
 .activity-details {
     display: flex;
@@ -505,9 +534,25 @@ a:hover {
     margin: 0;
 }
 
-.purple { color: #5f5878; }
-.purple-dark { color: #4b3a8b; }
-.purple-light { color: #796698; }
+/* Text Colors */
+
+.pink {
+    color: #8d73da;
+}
+
+.green {
+    color: #442885;
+}
+
+.purple {
+    color: #5c3fb9;
+}
+
+.blue {
+    color: #63529f;
+}
+
+/* Mobile */
 
 @media (max-width: 650px) {
     .activity-content {

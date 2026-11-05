@@ -19,6 +19,7 @@ const indexController = require("./routes/index.routes.js");
 const bodyController = require("./routes/body.routes.js"); 
 const dailyController = require("./routes/Daily.routes.js");
 const homeController = require("./routes/home.routes.js"); 
+const recipesController = require("./routes/recipes.routes.js");
 // Middleware
 app.use(express.static('public')) // my app will serve all static files from public folder
 app.use(express.urlencoded({ extended: false }));
@@ -63,6 +64,7 @@ app.use('/',indexController)
 app.use('/measurements', bodyController)
 app.use('/daily', dailyController)
 app.use('/home', homeController)
+app.use('/recipes', recipesController)
 
 
 

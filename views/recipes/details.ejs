@@ -1,27 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>FitTrack | Homepage</title>
-
+    <title>FitTrack | Recipe Details</title>
     <link rel="stylesheet" href="/css/style.css">
-
 </head>
-
 <body>
 
-   <%- include('../partials/navbar') %>
+    <%- include('../partials/navbar') %>
 
-   <main>
-       <h2>Recipe Details</h2>
-      <p>Discover healthy meals for your fitness journey.</p>
+    <main class="recipe-details-container">
 
+        <% if (recipe) { %>
 
+            <h2><%= recipe.name %></h2  >
 
-     
-</main>
+            <img
+                src="<%= recipe.image %>"
+                alt="<%= recipe.name %>"
+                class="recipe-details-image"
+            >
+
+            <p><strong>Category:</strong> <%= recipe.category %></p>
+
+            <p><strong>Calories:</strong> <%= recipe.calories %> kcal</p>
+
+            <p><strong>Protein:</strong> <%= recipe.protein %> g</p>
+
+            <h2>Description</h2>
+            <p><%= recipe.description %></p>
+
+            <h2>Ingredients</h2>
+
+            <ul>
+                <% recipe.ingredients.forEach(ingredient => { %>
+                    <li><%= ingredient %></li>
+                <% }) %>
+            </ul>
+
+            <h2>Instructions</h2>
+
+            <ol>
+                <% recipe.instructions.forEach(step => { %>
+                    <li><%= step %></li>
+                <% }) %>
+            </ol>
+
+        <% } else { %>
+
+            <h1>Recipe Not Found</h1>
+            <p>The requested recipe does not exist.</p>
+
+        <% } %>
+
+        <a href="/recipes">← Back to Recipes</a>
+
+    </main>
+
 </body>
 </html>

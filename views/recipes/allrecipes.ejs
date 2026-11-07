@@ -1,0 +1,132 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FitTrack | Recipes</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+    <%- include('../partials/navbar') %>
+
+    <main class="recipes-page">
+
+        <h2>Recipe Library</h2>
+        <p>Discover healthy meals for your fitness journey.</p>
+
+        <div class="recipe-grid">
+
+            <%
+            const recipes = [
+                {
+                    name: "Peanut Butter Banana Toast",
+                    category: "Pre-workout",
+                    calories: 330,
+                    protein: 10,
+                    image:"https://cdn.corenexis.com/f/UwenNref.webp",
+                    id: 1
+                },
+                {
+                    name: "Grilled Chicken Rice Bowl",
+                    category: "Post-workout",
+                    calories: 450,
+                    protein: 38,
+                    image: "https://cdn.corenexis.com/f/2RVmNjXM.webp",
+                    id: 2
+                },
+                {
+                    name: "Greek Yogurt Berry Bowl",
+                    category: "Breakfast",
+                    calories: 280,
+                    protein: 20,
+                    image: "https://cdn.corenexis.com/f/GKN1Dtlv.png",
+                    id: 3
+                },
+                {
+                    name: "Chicken Quinoa Salad",
+                    category: "Lunch",
+                    calories: 420,
+                    protein: 40,
+                    image: "https://cdn.corenexis.com/f/KbH8jxwn.webp",
+                    id: 4
+                },
+                {
+                    name: "Baked Salmon with Vegetables",
+                    category: "Dinner",
+                    calories: 430,
+                    protein: 35,
+                    image: "https://cdn.corenexis.com/f/KZV5GeNy.avif",
+                    id: 5
+                },
+                {
+                    name: "Garlic Butter Chicken with Broccoli",
+                    category: "Low-carb",
+                    calories: 295,
+                    protein: 25,
+                    image: "https://cdn.corenexis.com/f/F4Ey1sXf.webp",
+                    id: 6
+                },
+                {
+                    name: "Lemon Herb Turkey Meatball Bowl",
+                    category: "High-protein",
+                    calories: 346,
+                    protein: 44,
+                    image: "https://cdn.corenexis.com/f/Kt6TZ5xg.webp",
+                    id: 7
+                },
+                {
+                    name: "Greek Yogurt with Mixed Berries",
+                    category: "Snack",
+                    calories: 238,
+                    protein: 43,
+                    image: "https://cdn.corenexis.com/f/wdpOda0d.webp",
+                    id: 8
+                }
+    
+            ];
+            %>
+
+            <% recipes.forEach(recipe => { %>
+
+                <div class="recipe-card">
+
+                    <img
+                        src="<%= recipe.image %>"
+                        alt="<%= recipe.name %>"
+                        class="recipe-image"
+                    >
+
+                    <div class="recipe-info">
+
+                        <span class="recipe-category">
+                            <%= recipe.category %>
+                        </span>
+
+                        <h3><%= recipe.name %></h3>
+
+                        <p>
+                            <%= recipe.calories %> kcal
+                            | <%= recipe.protein %>g protein
+                        </p>
+
+                        <a href="/recipes/details/<%= recipe.id %>">
+                            View Details →
+                        </a>
+
+                    </div>
+
+                </div>
+
+            <% }) %>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

@@ -1,5 +1,14 @@
+/* FitTrack Blue & Silver Theme */
+:root {
+    --background: #E8EEF2;
+    --silver: #B8CAD8;
+    --light-blue: #7195B5;
+    --steel-blue: #527797;
+    --navy: #315675;
+    --deep-navy: #24445F;
+    --white: #FFFFFF;
+}
 
-/* Custom styles for Project 2 */
 .edu-qld-hand-uniquifier {
   font-family: "Edu QLD Hand", cursive;
   font-optical-sizing: auto;
@@ -11,7 +20,7 @@
 body {
       font-family: edu-qld-hand-uniquifier;
     min-height: 100vh;
-    background: linear-gradient(135deg, #ebeaf0, #d1b7f0, #b78ccd);
+    background: linear-gradient(135deg, #E8EEF2, #D5E0E8, #7195B5);
     background-size: 400% 400%;
     animation: backgroundMove 8s ease infinite;
     position: relative;
@@ -54,7 +63,7 @@ nav {
   font-family: edu-qld-hand-uniquifier;
   position: sticky;
   top: 0;
-  background: linear-gradient(135deg, #b78ccd, #ac7ec5);
+  background: linear-gradient(135deg, #7195B5, #527797);
   z-index: 1000;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
@@ -75,7 +84,7 @@ a{
 }
 
 a:hover {
-    border-bottom: 2px solid rgb(90, 46, 179);
+    border-bottom: 2px solid #315675;
 
 }
 
@@ -111,23 +120,23 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 12px;
-    box-shadow: 0 8px 25px rgba(80, 40, 100, 0.12);
+    box-shadow: 0 8px 25px rgba(49, 86, 117, 0.12);
 }
 
 .form-section h2 {
-    color: #4b1157;
+    color: #315675;
     font-size: 26px;
     margin-top: 0;
 }
 
 .form-section label {
-    color: #4b1157;
+    color: #315675;
     font-weight: bold;
 }
 
 .form-section input {
     padding: 13px;
-    border: 1px solid #d5b8e8;
+    border: 1px solid #B8CAD8;
     border-radius: 10px;
     font-size: 16px;
     width: 100%;
@@ -136,13 +145,13 @@ a:hover {
 
 .form-section input:focus {
     outline: none;
-    border-color: #8577b9;
-    box-shadow: 0 0 5px rgba(133, 119, 185, 0.3);
+    border-color: #527797;
+    box-shadow: 0 0 5px rgba(49, 86, 117, 0.3);
 }
 
 .form-section button {
     padding: 14px;
-    background: #8577b9;
+    background: #527797;
     color: white;
     border: none;
     border-radius: 12px;
@@ -153,7 +162,7 @@ a:hover {
 }
 
 .form-section button:hover {
-    background: #625688;
+    background: #315675;
 }
 
 @media (max-width: 800px) {
@@ -170,7 +179,7 @@ a:hover {
 
 /* measurement card record */
 .measurement-card {
-    background: linear-gradient(135deg, #b6b4e4, #ded2f2);;
+    background: linear-gradient(135deg, #B8CAD8, #E8EEF2);;
     width: 300px;
     padding: 20px;
     border-radius: 15px;
@@ -178,7 +187,7 @@ a:hover {
 }
 
 .measurement-card h2 {
-    color: linear-gradient(135deg, #6561bc, #c3b6d8);
+    color: linear-gradient(135deg, #527797, #B8CAD8);
     margin-bottom: 15px;
 }
 
@@ -206,20 +215,20 @@ a:hover {
 }
 
 .edit-btn {
-    background: linear-gradient(135deg, #6561bc, #c3b6d8);
+    background: linear-gradient(135deg, #527797, #B8CAD8);
 }
 
 .edit-btn:hover {
-    background: linear-gradient(135deg, #44408f, #c3b6d8);
+    background: linear-gradient(135deg, #315675, #B8CAD8);
 }
 
 .delete-btn {
-    background:linear-gradient(135deg, #6561bc, #c3b6d8);
+    background:linear-gradient(135deg, #527797, #B8CAD8);
 
 }
 
 .delete-btn:hover {
-    background: linear-gradient(135deg, #44408f, #c3b6d8);
+    background: linear-gradient(135deg, #315675, #B8CAD8);
 }
 
 
@@ -257,7 +266,7 @@ a:hover {
     background: white;
     padding: 25px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(80, 50, 120, 0.06);
+    box-shadow: 0 4px 15px rgba(49, 86, 117, 0.06);
     transition: 0.3s;
 }
 
@@ -275,7 +284,7 @@ a:hover {
 }
 
 .summary-card h2 {
-    color: #7652B8;
+    color: #315675;
     font-size: 24px;
 }
 
@@ -284,11 +293,11 @@ a:hover {
     background: white;
     padding: 30px;
     border-radius: 18px;
-    box-shadow: 0 4px 15px rgba(80, 50, 120, 0.06);
+    box-shadow: 0 4px 15px rgba(49, 86, 117, 0.06);
 }
 
 .progress-form h2 {
-    color: #7652B8;
+    color: #315675;
     margin-bottom: 25px;
 }
 
@@ -314,7 +323,7 @@ a:hover {
 .daily-tracker-header h2 {
     font-family: 'Bodoni Moda', serif;
     font-size: 32px;
-    color: #7652B8;
+    color: #315675;
     margin-bottom: 8px;
 }
 
@@ -325,7 +334,7 @@ a:hover {
 
 .daily-tracker-header input {
     padding: 12px;
-    border: 1px solid #DED5E9;
+    border: 1px solid #B8CAD8;
     border-radius: 10px;
     background: white;
 }
@@ -343,7 +352,7 @@ a:hover {
     background: white;
     padding: 23px 18px;
     border-radius: 16px;
-    box-shadow: 0 4px 15px rgba(80, 50, 120, 0.07);
+    box-shadow: 0 4px 15px rgba(49, 86, 117, 0.07);
     transition: 0.3s;
 }
 
@@ -361,7 +370,7 @@ a:hover {
 }
 
 .daily-tracker-entry h2 {
-    color: #7652B8;
+    color: #315675;
     font-size: 23px;
 }
 
@@ -371,11 +380,11 @@ a:hover {
     background: white;
     padding: 30px;
     border-radius: 18px;
-    box-shadow: 0 4px 15px rgba(80, 50, 120, 0.07);
+    box-shadow: 0 4px 15px rgba(49, 86, 117, 0.07);
 }
 
 .daily-tracker-form h2 {
-    color: #7652B8;
+    color: #315675;
     font-family: 'Bodoni Moda', serif;
     margin-bottom: 25px;
 }
@@ -396,7 +405,7 @@ a:hover {
 }
 
 .form-group label {
-    color: #453653;
+    color: #315675;
     font-weight: 600;
     font-size: 15px;
 }
@@ -405,9 +414,9 @@ a:hover {
 .form-group select {
     width: 100%;
     padding: 13px;
-    border: 1px solid #DED5E9;
+    border: 1px solid #B8CAD8;
     border-radius: 10px;
-    background: #FDFCFF;
+    background: #F8FAFC;
     font-size: 14px;
     outline: none;
     font-family: inherit;
@@ -415,14 +424,14 @@ a:hover {
 
 .form-group input:focus,
 .form-group select:focus {
-    border-color: #7652B8;
-    box-shadow: 0 0 5px rgba(118, 82, 184, 0.2);
+    border-color: #315675;
+    box-shadow: 0 0 5px rgba(49, 86, 117, 0.2);
 }
 
 /* Submit Button */
 
 .form-group button {
-    background: #7652B8;
+    background: #315675;
     color: white;
     border: none;
     padding: 14px 25px;
@@ -434,7 +443,7 @@ a:hover {
 }
 
 .form-group button:hover {
-    background: #5F3E9B;
+    background: #24445F;
 }
 
 /* Responsive */
@@ -476,7 +485,7 @@ a:hover {
     color: rgb(101, 26, 26);
 }
 .down{
-    color: rgb(79, 21, 87);
+    color: rgb(49, 86, 117);
 }
 
 
@@ -488,7 +497,7 @@ a:hover {
 
 .home-container {
     padding: 30px;
-    color: #b78ccd;
+    color: #7195B5;
     font-family: 'Bodoni Moda', serif;
 }
 
@@ -497,7 +506,7 @@ a:hover {
 /* Activity Card */
 
 .activity-card {
-    background: linear-gradient(135deg, #b78ccd, #ccaef8 , #e1dee7);
+    background: linear-gradient(135deg, #7195B5, #D5E0E8 , #24445F);
     padding: 20px 20px;
     border-radius: 30px;
     max-width: 1000px;
@@ -539,19 +548,19 @@ a:hover {
 }
 
 .move-bg {
-    stroke: #ece5ed;
+    stroke: #E8EEF2;
 }
 
 .exercise-bg {
-    stroke: #cccacf;
+    stroke: #D5E0E8;
 }
 
 .steps-bg {
-    stroke: #e8e8ed;
+    stroke: #B8CAD8;
 }
 
 .water-bg {
-    stroke: #c9c1df;
+    stroke: #F8FAFC;
 }
 
 /* Ring Progress */
@@ -562,22 +571,22 @@ a:hover {
 }
 
 .move-progress {
-    stroke: #8d73da;
+    stroke: #315675;
     stroke-dasharray: 628.32;
 }
 
 .exercise-progress {
-    stroke: #442885;
+    stroke: #527797;
     stroke-dasharray: 477.52;
 }
 
 .steps-progress {
-    stroke: #5c3fb9;
+    stroke: #7195B5;
     stroke-dasharray: 326.73;
 }
 
 .water-progress {
-    stroke:  #63529f;
+    stroke:  #B8CAD8;
     stroke-dasharray: 175.93;
 }
 
@@ -603,6 +612,21 @@ a:hover {
 
 /* Text Colors */
 
+.pink {
+    color: #315675;
+}
+
+.green {
+    color: #527797;
+}
+
+.purple {
+    color: #7195B5;
+}
+
+.blue {
+    color: #B8CAD8;
+}
 
 /* Mobile */
 
@@ -656,7 +680,7 @@ a:hover {
 }
 
 .recipe-category {
-    color: #8b65c5;
+    color: #527797;
     font-size: 13px;
     font-weight: bold;
 }
@@ -673,7 +697,7 @@ a:hover {
 .recipe-info a {
     display: inline-block;
     margin-top: 10px;
-    color: #8b65c5;
+    color: #527797;
     text-decoration: none;
     font-weight: bold;
 }
@@ -692,7 +716,7 @@ a:hover {
 
 .recipe-details-container h1 {
     text-align: center;
-    color: #2c3e50;
+    color: #315675;
     margin-bottom: 20px;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
 }
@@ -723,7 +747,7 @@ a:hover {
 
 .recipe-category {
     display: inline-block;
-    background-color: #27ae60;
+    background-color: #527797;
     color: white;
     padding: 6px 12px;
     border-radius: 20px;
@@ -738,7 +762,7 @@ a:hover {
 }
 
 .recipe-nutrition div {
-    background-color: #f5f7fa;
+    background-color: #E8EEF2;
     padding: 15px;
     border-radius: 12px;
     min-width: 120px;
@@ -746,7 +770,7 @@ a:hover {
 }
 
 .recipe-nutrition h3 {
-    color: #27ae60;
+    color: #527797;
     margin-bottom: 5px;
 }
 
@@ -760,7 +784,7 @@ a:hover {
 
 .recipe-section h2,
 .recipe-section h3 {
-    color: #2c3e50;
+    color: #315675;
     margin-bottom: 15px;
 }
 
@@ -778,7 +802,7 @@ a:hover {
 .back-link {
     display: inline-block;
     text-decoration: none;
-    background-color: #27ae60;
+    background-color: #527797;
     color: white;
     padding: 12px 20px;
     border-radius: 8px;
@@ -786,7 +810,7 @@ a:hover {
 }
 
 .back-link:hover {
-    background-color: #219150;
+    background-color: #315675;
 }
 
 /* Responsive Design */

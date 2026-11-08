@@ -13,7 +13,12 @@ FitTrack is a web-based fitness management application that helps users track wo
 ## Technologies Used
 1. javascript
 2. css
-3. 
+3. server.js
+4. Html 
+5. MongoDB
+6. Ejs 
+7. Express.js
+
 
 # Project structure
 
@@ -58,9 +63,70 @@ FitTrack is a web-based fitness management application that helps users track wo
 
 
 ## Features
-
+FitTrack – Main Features
+1. User Authentication
+- User registration and login.
+- Secure session management.
+- Logout functionality.
+2. Body Measurements Management
+- Add, view, edit and delete body measurements.
+- Track weight, height, chest, waist and hip measurements.
+- Set a target weight.
+- Compare weight changes between records.
+- View a body measurement guide.
+3. Daily Progress Tracker
+- Record daily weight.
+- Track calories burned.
+- Track water intake.
+- Record daily steps.
+- Monitor sleep hours.
+- Record workout type and duration.
+- View daily progress history.
+4. Daily Calorie Calculator
+- Calculate Basal Metabolic Rate (BMR).
+- Estimate Total Daily Energy Expenditure (TDEE).
+- Calculate daily calorie needs based on body measurements, age, gender and activity level.
+5. Fitness Dashboard
+- Display the latest fitness progress.
+- Show daily activity rings.
+- Monitor calories, exercise, steps and water intake.
+- Display daily calorie needs.
+6. Recipe Library
+- Browse healthy recipes.
+- View recipe images and categories.
+- Display calories and protein information.
+- View recipe ingredients and preparation instructions.
+Additional Features
+- Responsive design for desktop and mobile.
+- Blue & Silver user interface.
+- Navigation bar for easy access to all sections.
+- animation background
 
 ## Future Enhancements
+1. Recipe Favorites
+- Allow users to save their favorite recipes.
+- Create a personalized list of saved recipes.
+
+2. Personalized Workout Plans
+- Recommend workouts based on users' fitness goals and activity levels.
+- Provide customized exercise schedules.
 
 
-## Credits (edited)
+
+## Recipe References
+
+1. Peanut Butter Banana Toast – [BBC Good Food](https://www.bbcgoodfood.com/recipes/peanut-butter-banana-toast)
+
+2. Grilled Chicken Rice Bowl – [Healthy by Fork](https://www.healthybyfork.com/grilled-chicken-rice-bowls/)
+
+3. Greek Yogurt Berry Bowl – [U.S. Department of Veterans Affairs](https://www.nutrition.va.gov/NUTRITION/Recipes/Snacks/docs/Berry-Yogurt-Protein-BowlsJAN2022.pdf)
+
+4. Chicken Quinoa Salad – [Olive Magazine](https://www.olivemagazine.com/recipes/healthy/quinoa-chicken-salad/)
+
+5. Baked Salmon with Vegetables – [Integrated Living](https://integratedliving.org.au/live-well/oven-baked-salmon-and-vegetables-recipe/)
+
+6. Garlic Butter Chicken with Broccoli – [Gimme Delicious](https://gimmedelicious.com/garlic-butter-chicken-broccoli/)
+
+7. Lemon Herb Turkey Meatball Bowl – [Canadian Turkey](https://www.canadianturkey.ca/en/recipe/turkey-lemon-garlic-meatball-bowls/)
+
+8. Greek Yogurt with Mixed Berries – [MealPrep.org.uk](https://www.mealprep.org.uk/recipes/greek-yogurt-berries)

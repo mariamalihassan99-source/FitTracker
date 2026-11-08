@@ -60,33 +60,64 @@ h1 {
 /* navigation bar */
 
 nav {
-  font-family: edu-qld-hand-uniquifier;
-  position: sticky;
-  top: 0;
-  background: linear-gradient(135deg, #7195B5, #527797);
-  z-index: 1000;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  padding: 10px 20px;
-  display: flex;
-  justify-content: space-between;
-  padding: 10px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 45px;
+
+    background: linear-gradient(
+        135deg,
+        #315675,
+        #527797
+    );
+
+    box-shadow: 0 4px 12px rgba(36, 68, 95, 0.18);
 }
 
-a{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+/* Navbar Links */
+nav a {
+    color: white;
     text-decoration: none;
-    color: black;
-    margin: 0 10px;
-    border-bottom: 2px solid transparent;
-    transition: border-bottom 0.3s;
-    padding-bottom: 2px;
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
 
+    margin: 0 12px;
+    padding: 8px 12px;
+
+    border-radius: 8px;
+    border-bottom: none;
+
+    transition: all 0.3s ease;
 }
 
-a:hover {
-    border-bottom: 2px solid #315675;
-
+/* Hover Effect */
+nav a:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: #E8EEF2;
+    border-bottom: none;
 }
+
+/* Mobile */
+@media (max-width: 650px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    nav a {
+        font-size: 14px;
+        margin: 0 4px;
+    }
+}
+
 
 
 

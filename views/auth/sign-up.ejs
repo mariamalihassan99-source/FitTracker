@@ -1,22 +1,72 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <title>Sign Up</title>
-  </head>
-  <body>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/css/auth.css">
+
+    <title>FitTrack | Sign Up</title>
+</head>
+
+<body>
+
     <%- include('../partials/navbar') %>
-    <h1>Create a new account!</h1>
-    <form action="/auth/sign-up" method="post">
-      <label for="username">Username:</label>
-      <input type="text" name="username" id="username" />
-      <label for="password">Password:</label>
-      <input type="password" name="password" id="password" />
-      <label for="confirmPassword">Confirm Password:</label>
-      <input type="password" name="confirmPassword" id="confirmPassword" />
-      <button type="submit">Sign up</button>
-    </form>
-  </body>
+
+    <main class="auth-container">
+
+        <div class="auth-card">
+
+            <h1>Create Your Account</h1>
+
+            <p class="auth-subtitle">
+                Start your fitness journey with FitTrack.
+            </p>
+
+            <form action="/auth/sign-up" method="POST" class="auth-form">
+
+                <div class="auth-group">
+                    <label for="username">Username</label>
+                    <input
+                        type="text"
+                        name="username"
+                        id="username"
+                        placeholder="Choose a username"
+                        required
+                    >
+                </div>
+
+                <div class="auth-group">
+                    <label for="password">Password</label>
+                    <input
+                        type="password"
+                        name="password"
+                        id="password"
+                        placeholder="Create a password"
+                        required
+                    >
+                </div>
+
+                <div class="auth-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <input
+                        type="password"
+                        name="confirmPassword"
+                        id="confirmPassword"
+                        placeholder="Confirm your password"
+                        required
+                    >
+                </div>
+
+                <button type="submit">Create Account</button>
+
+            </form>
+
+        </div>
+
+    </main>
+
+</body>
 </html>

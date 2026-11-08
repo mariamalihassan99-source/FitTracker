@@ -9,6 +9,12 @@ FitTrack is a web-based fitness management application that helps users track wo
 ## Screenshots
 ![alt text](image.png)
 ![alt text](image-2.png)
+![alt text](image-3.png)
+![alt text](image-4.png)
+![alt text](image-5.png)
+![alt text](image-6.png)
+![alt text](image-7.png)
+
 
 ## Technologies Used
 1. javascript
@@ -56,11 +62,25 @@ FitTrack is a web-based fitness management application that helps users track wo
 
 
 ## Database Design
-![alt text](image-1.png)
+![alt text](image-8.png)
 
 
 ## Routes
-
+Method	Route	Description
+GET	| / |Display the homepage and fitness dashboard
+GET	|/measurements | Display body measurements
+POST | /measurements	| Add new body measurements
+GET	| /measurements/edit/:id	| Display the edit measurement form
+PUT	| /measurements/:id | Update body measurements
+DELETE | /measurements/:id| Delete body measurements
+GET	 | /daily |Display the daily tracker page
+POST | /daily | Add a new daily progress record
+GET	| /daily/history	| Display daily progress history
+GET	| /recipes/ | Display all fitness recipes
+GET	| /recipes/details/:id|View recipe details
+GET	| /auth/sign-up | Display the registration page
+GET	| /auth/sign-in	| Display the login page
+GET	| /auth/sign-out| Log out the user
 
 ## Features
 FitTrack – Main Features

@@ -7,7 +7,8 @@ FitTrack is a web-based fitness management application that helps users track wo
 
 
 ## Screenshots
-
+![alt text](image.png)
+![alt text](image-2.png)
 
 ## Technologies Used
 1. javascript

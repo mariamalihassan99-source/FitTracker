@@ -30,8 +30,8 @@
 
     <title>FitTrack | Homepage</title>
 
-    <link rel="stylesheet" href="/css/style.css">
-
+    <link rel="stylesheet" href="/css/homepage.css">
+    <link  rel="stylesheet" href="/css/style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Edu+QLD+Hand:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
     </style>
@@ -42,14 +42,58 @@
     <!-- Navigation Bar -->
     <%- include('./partials/navbar') %>
 
-    <!-- Homepage Header -->
+    <!-- Homepage -->
     <main class="home-container">
-        <h3>FitTrack</h3>
+
+        <h5>❚█FitTrack█❚</h5>
+
+<!-- Daily Calorie Needs -->
+
+<% if (calorieResults) { %>
+
+<div class="calorie-card">
+
+    <h2>❚█ Your Daily Calorie Needs █❚</h2>
+
+    <p>Based on your latest body measurements and activity level.</p>
+
+    <div class="calorie-results">
+
+        <div class="calorie-box">
+            <h3>BMR</h3>
+            <p><%= calorieResults.bmr %></p>
+            <span>Calories burned at rest / day</span>
+        </div>
+
+        <div class="calorie-box">
+            <h3>TDEE</h3>
+            <p><%= calorieResults.tdee %></p>
+            <span>Estimated maintenance calories / day</span>
+        </div>
+
+    </div>
+
+    <p class="calorie-description">
+        Your TDEE represents the estimated calories your body
+        needs daily to maintain your current weight.
+    </p>
+
+</div>
+
+<% } else { %>
+
+<div class="calorie-card">
+    <h2>Your Daily Calorie Needs</h2>
+    <p>Add your body measurements, age, gender and activity level to calculate your daily calories.</p>
+    <a href="/measurements">Add Your Measurements</a>
+</div>
+
+<% } %>
 
         <!-- Activity Rings Section -->
         <section class="activity-card">
 
-            <h2>Activity Rings</h2>
+            <h4>Activity Rings</h4>
 
             <div class="activity-content">
 
@@ -58,40 +102,90 @@
 
                     <svg viewBox="0 0 240 240">
 
+                        <!-- Ring Gradients -->
+                        <defs>
+
+                            <linearGradient id="caloriesGradient"
+                                x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#315675"/>
+                                <stop offset="100%" stop-color="#7195B5"/>
+                            </linearGradient>
+
+                            <linearGradient id="exerciseGradient"
+                                x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#527797"/>
+                                <stop offset="100%" stop-color="#9BBAD3"/>
+                            </linearGradient>
+
+                            <linearGradient id="stepsGradient"
+                                x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#24445F"/>
+                                <stop offset="100%" stop-color="#527797"/>
+                            </linearGradient>
+
+                            <linearGradient id="waterGradient"
+                                x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#7195B5"/>
+                                <stop offset="100%" stop-color="#B8CAD8"/>
+                            </linearGradient>
+
+                        </defs>
+
+
                         <!-- Calories Burned Ring -->
                         <circle class="ring move-bg"
-                            cx="120" cy="120" r="100"/>
+                            cx="120" cy="120" r="100"
+                            stroke-dasharray="628.32"
+                            transform="rotate(-90 120 120)"/>
 
                         <circle class="ring move-progress"
                             cx="120" cy="120" r="100"
-                            style="stroke-dashoffset: <%= 628.32 * (1 - caloriesPercent) %>"/>
+                            stroke="url(#caloriesGradient)"
+                            stroke-dasharray="628.32"
+                            style="stroke-dashoffset: <%= 628.32 * (1 - caloriesPercent) %>"
+                            transform="rotate(-90 120 120)"/>
 
 
                         <!-- Exercise Ring -->
                         <circle class="ring exercise-bg"
-                            cx="120" cy="120" r="76"/>
+                            cx="120" cy="120" r="76"
+                            stroke-dasharray="477.52"
+                            transform="rotate(-90 120 120)"/>
 
                         <circle class="ring exercise-progress"
                             cx="120" cy="120" r="76"
-                            style="stroke-dashoffset: <%= 477.52 * (1 - exercisePercent) %>"/>
+                            stroke="url(#exerciseGradient)"
+                            stroke-dasharray="477.52"
+                            style="stroke-dashoffset: <%= 477.52 * (1 - exercisePercent) %>"
+                            transform="rotate(-90 120 120)"/>
 
 
                         <!-- Steps Ring -->
                         <circle class="ring steps-bg"
-                            cx="120" cy="120" r="52"/>
+                            cx="120" cy="120" r="52"
+                            stroke-dasharray="326.73"
+                            transform="rotate(-90 120 120)"/>
 
                         <circle class="ring steps-progress"
                             cx="120" cy="120" r="52"
-                            style="stroke-dashoffset: <%= 326.73 * (1 - stepsPercent) %>"/>
+                            stroke="url(#stepsGradient)"
+                            stroke-dasharray="326.73"
+                            style="stroke-dashoffset: <%= 326.73 * (1 - stepsPercent) %>"
+                            transform="rotate(-90 120 120)"/>
 
 
                         <!-- Water Ring -->
                         <circle class="ring water-bg"
-                            cx="120" cy="120" r="28"/>
+                            cx="120" cy="120" r="28"
+                            stroke-dasharray="175.93"
+                            transform="rotate(-90 120 120)"/>
 
                         <circle class="ring water-progress"
                             cx="120" cy="120" r="28"
-                            style="stroke-dashoffset: <%= 175.93 * (1 - waterPercent) %>"/>
+                            stroke="url(#waterGradient)"
+                            stroke-dasharray="175.93"
+                            style="stroke-dashoffset: <%= 175.93 * (1 - waterPercent) %>"
+                            transform="rotate(-90 120 120)"/>
 
                     </svg>
 
@@ -104,30 +198,37 @@
                     <!-- Calories Burned -->
                     <div class="activity-item">
                         <h2>Calories Burned</h2>
+
                         <p class="pink">
                             <%= calories %>/<%= targets.calories %> KCAL
                         </p>
                     </div>
 
+
                     <!-- Exercise -->
                     <div class="activity-item">
                         <h2>Exercise</h2>
+
                         <p class="green">
                             <%= exercise %>/<%= targets.exercise %> MIN
                         </p>
                     </div>
 
+
                     <!-- Steps -->
                     <div class="activity-item">
                         <h2>Steps</h2>
+
                         <p class="purple">
                             <%= steps.toLocaleString() %>/<%= targets.steps.toLocaleString() %> STEPS
                         </p>
                     </div>
 
+
                     <!-- Water -->
                     <div class="activity-item">
                         <h2>Water</h2>
+
                         <p class="blue">
                             <%= water %>/<%= targets.water.toLocaleString() %> ML
                         </p>

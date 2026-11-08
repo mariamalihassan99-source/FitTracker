@@ -8,10 +8,24 @@ const bodyMeasurementsSchema = new mongoose.Schema({
   chest: { type: Number },
   waist: { type: Number },
   hips: { type: Number } ,
-  goal: { type: String }
-},{
-  timestamps: true
-} );
+  goal: { type: String },
+   age: {
+        type: Number,
+        required: true
+    },
+
+    gender: {
+        type: String,
+        enum: ['female', 'male'],
+        required: true
+    },
+
+    activityLevel: {
+        type: Number,
+        required: true
+    }
+
+}, { timestamps: true });
 
 // model
 const BodyMeasurements = mongoose.model('BodyMeasurements', bodyMeasurementsSchema)

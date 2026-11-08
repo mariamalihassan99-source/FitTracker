@@ -1,0 +1,285 @@
+
+/* =================================================
+   FITTRACK - RECIPE LIBRARY
+   Blue & Silver Theme
+   ================================================= */
+
+/* Main page */
+.recipes-page {
+    width: calc(100% - 60px);
+    max-width: 1450px;
+    margin: 45px auto;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Page heading */
+.recipes-page > h2 {
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 38px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.recipes-page > p {
+    color: #7195B5;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+/* Recipe grid */
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* Recipe card */
+.recipe-card {
+    min-width: 0;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid #D5E0E8;
+    border-radius: 20px;
+    box-shadow: 0 6px 20px rgba(49, 86, 117, 0.09);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.recipe-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 28px rgba(49, 86, 117, 0.16);
+}
+
+/* Recipe image */
+.recipe-image {
+    display: block;
+    width: 100%;
+    height: 210px;
+    object-fit: cover;
+}
+
+/* Recipe information */
+.recipe-info {
+    padding: 20px;
+}
+
+/* Category label */
+.recipe-category {
+    display: inline-block;
+    padding: 7px 12px;
+    background: #E8EEF2;
+    color: #315675;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+/* Recipe name */
+.recipe-info h3 {
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 20px;
+    line-height: 1.4;
+    margin: 0 0 12px;
+    min-height: 56px;
+}
+
+/* Calories and protein */
+.recipe-info p {
+    color: #7195B5;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+/* Details link */
+.recipe-info a {
+    display: block;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px;
+    background: #315675;
+    color: #FFFFFF;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.3s ease;
+}
+
+.recipe-info a:hover {
+    background: #527797;
+}
+
+/* =================================================
+   RESPONSIVE DESIGN
+   ================================================= */
+
+@media (max-width: 1100px) {
+    .recipe-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 800px) {
+    .recipe-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .recipes-page > h2 {
+        font-size: 32px;
+    }
+}
+
+@media (max-width: 520px) {
+    .recipes-page {
+        width: calc(100% - 30px);
+        margin: 30px auto;
+    }
+
+    .recipe-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .recipe-image {
+        height: 230px;
+    }
+}
+
+
+
+
+/* =================================================
+   FITTRACK - RECIPE DETAILS
+   Blue & Silver Theme
+   ================================================= */
+
+.recipe-details-container {
+    width: calc(100% - 40px);
+    max-width: 1050px;
+    margin: 45px auto;
+    padding: 40px;
+    background: #FFFFFF;
+    border: 1px solid #D5E0E8;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(49, 86, 117, 0.10);
+    font-family: 'Josefin Sans', sans-serif;
+    box-sizing: border-box;
+}
+
+/* Recipe title */
+.recipe-details-container > h2:first-child {
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 36px;
+    text-align: center;
+    margin: 0 0 25px;
+}
+
+/* Recipe image */
+.recipe-details-image {
+    display: block;
+    width: 100%;
+    max-width: 650px;
+    height: 380px;
+    object-fit: cover;
+    margin: 0 auto 30px;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px rgba(49, 86, 117, 0.12);
+}
+
+/* Recipe information */
+.recipe-details-container > p {
+    color: #527797;
+    font-size: 17px;
+    line-height: 1.7;
+    margin: 12px 0;
+}
+
+.recipe-details-container > p strong {
+    color: #315675;
+}
+
+/* Section headings */
+.recipe-details-container h2:not(:first-child) {
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 25px;
+    margin: 30px 0 15px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #D5E0E8;
+}
+
+/* Ingredients and instructions */
+.recipe-details-container ul,
+.recipe-details-container ol {
+    padding-left: 30px;
+    color: #527797;
+    font-size: 17px;
+    line-height: 1.9;
+}
+
+.recipe-details-container li {
+    padding-left: 5px;
+    margin-bottom: 8px;
+}
+
+.recipe-details-container li::marker {
+    color: #7195B5;
+    font-weight: bold;
+}
+
+/* Back button */
+.recipe-details-container > a {
+    display: inline-block;
+    margin-top: 30px;
+    padding: 13px 25px;
+    background: #315675;
+    color: #FFFFFF;
+    border-radius: 10px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.recipe-details-container > a:hover {
+    background: #527797;
+    transform: translateY(-2px);
+}
+
+/* Recipe not found */
+.recipe-details-container h1 {
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+}
+
+/* Responsive */
+@media (max-width: 650px) {
+    .recipe-details-container {
+        width: calc(100% - 25px);
+        padding: 22px;
+        margin: 25px auto;
+    }
+
+    .recipe-details-container > h2:first-child {
+        font-size: 27px;
+    }
+
+    .recipe-details-image {
+        height: 250px;
+    }
+
+    .recipe-details-container h2:not(:first-child) {
+        font-size: 22px;
+    }
+
+    .recipe-details-container ul,
+    .recipe-details-container ol {
+        font-size: 15px;
+    }
+}
+

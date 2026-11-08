@@ -1,0 +1,309 @@
+
+
+/* Homepage container */
+.home-container {
+    padding: 30px;
+    color: #7195B5;
+    font-family: 'Bodoni Moda', serif;
+}
+
+/* Homepage headings */
+.home-container h4,
+.home-container h5 {
+    color: #315675;
+    text-align: center;
+    font-family: 'Times New Roman', serif;
+    font-size: 40px;
+    font-weight: 600;
+    margin: 0 0 20px;
+}
+
+/* =================================================
+   ACTIVITY CARD
+   ================================================= */
+
+.activity-card {
+    max-width: 1000px;
+    margin: 10px auto 35px;
+    padding: 25px;
+    background: linear-gradient(
+        135deg,
+        #24445F,
+        #7195B5,
+        #D5E0E8,
+        #85B7DF
+    );
+    border-radius: 30px;
+    color: white;
+    box-shadow: 0 8px 25px rgba(49, 86, 117, 0.18);
+}
+
+.activity-card h2 {
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0;
+}
+
+/* Activity layout */
+.activity-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 40px;
+}
+
+/* =================================================
+   ACTIVITY RINGS
+   ================================================= */
+
+.rings {
+    width: 390px;
+    max-width: 100%;
+    margin: auto;
+}
+
+.rings svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+.ring {
+    fill: none;
+    stroke-width: 18;
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1.2s ease;
+}
+
+.ring-progress {
+    stroke-linecap: round;
+    transition: stroke-dashoffset 1s ease;
+}
+
+/* Ring backgrounds */
+.move-bg {
+    stroke: #E8EEF2;
+}
+
+.exercise-bg {
+    stroke: #D5E0E8;
+}
+
+.steps-bg {
+    stroke: #F8F8F8;
+}
+
+.water-bg {
+    stroke: #F8FAFC;
+}
+
+/* Ring progress */
+.move-progress {
+    stroke: #315675;
+    stroke-dasharray: 628.32;
+    filter: drop-shadow(0 3px 4px rgba(49, 86, 117, 0.35));
+}
+
+.exercise-progress {
+    stroke: #527797;
+    stroke-dasharray: 477.52;
+    filter: drop-shadow(0 3px 4px rgba(82, 119, 151, 0.35));
+}
+
+.steps-progress {
+    stroke: #7195B5;
+    stroke-dasharray: 326.73;
+    filter: drop-shadow(0 3px 4px rgba(36, 68, 95, 0.35));
+}
+
+.water-progress {
+    stroke: #0863A8;
+    stroke-dasharray: 175.93;
+    filter: drop-shadow(0 3px 4px rgba(113, 149, 181, 0.4));
+}
+
+/* =================================================
+   ACTIVITY DETAILS
+   ================================================= */
+
+.activity-details {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.activity-details h2 {
+    font-family: Impact, Haettenschweiler, sans-serif;
+    font-size: 25px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.activity-details p {
+    font-family: Impact, Haettenschweiler, sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    margin: 0;
+}
+
+/* Activity colors */
+.activity-details .pink {
+    color: #315675;
+}
+
+.activity-details .green {
+    color: #527797;
+}
+
+.activity-details .purple {
+    color: #7195B5;
+}
+
+.activity-details .blue {
+    color: #0863A8;
+}
+
+/* =================================================
+   DAILY CALORIE NEEDS
+   ================================================= */
+
+.calorie-card {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 45px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    text-align: center;
+    box-shadow: 0 8px 25px rgba(49, 86, 117, 0.12);
+}
+
+.calorie-card h2 {
+    color: #315675;
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+.calorie-card > p {
+    color: #7195B5;
+    font-size: 18px;
+}
+
+.calorie-results {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.calorie-box {
+    flex: 1;
+    padding: 35px 20px;
+    background: #E8EEF2;
+    border-radius: 25px;
+}
+
+.calorie-box h3 {
+    color: #527797;
+    font-size: 24px;
+}
+
+.calorie-box p {
+    color: #315675;
+    font-size: 42px;
+    font-weight: bold;
+    margin: 20px 0;
+}
+
+.calorie-box span {
+    color: #7195B5;
+    font-size: 17px;
+}
+
+.calorie-description {
+    margin-top: 30px;
+    color: #527797;
+    font-size: 17px;
+}
+
+/* Add measurements link */
+.calorie-card a {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: #315675;
+    color: white;
+    text-decoration: none;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.calorie-card a:hover {
+    background: #527797;
+}
+
+/* =================================================
+   RESPONSIVE DESIGN
+   ================================================= */
+
+@media (max-width: 768px) {
+
+    .home-container {
+        padding: 20px;
+    }
+
+    .activity-content {
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    .rings {
+        width: 280px;
+    }
+
+    .activity-details {
+        width: 100%;
+        text-align: center;
+    }
+
+    .activity-details p {
+        font-size: 24px;
+    }
+
+    .calorie-card {
+        padding: 25px;
+        margin: 25px 10px;
+    }
+
+    .calorie-results {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .calorie-box p {
+        font-size: 34px;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .home-container h4,
+    .home-container h5 {
+        font-size: 28px;
+    }
+
+    .rings {
+        width: 230px;
+    }
+
+    .activity-card {
+        padding: 18px;
+    }
+
+    .calorie-card h2 {
+        font-size: 25px;
+    }
+}

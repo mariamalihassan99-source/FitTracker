@@ -1,92 +1,164 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/style.css">
-    <title>Home</title>
+    <link rel="stylesheet" href="/css/BodyMeasurements.css">
+    <title>FitTrack | Body Measurements</title>
 </head>
+
 <body>
+
     <%- include('../partials/navbar') %>
 
+    <h6>❚█ Add New Measurement █❚</h6>
 
+    <!-- Add Measurement Form and Guide -->
+    <div class="measurement-layout">
 
-    <h2>Add New Measurement</h2>
+        <form action="/measurements" method="POST" class="form-section">
 
-<div class="measurement-layout">
+            <label for="weight">Weight (kg):</label>
+            <input type="number" step="0.1" name="weight" id="weight" required>
 
-    <form action="/measurements" method="POST" class="form-section">
+            <label for="height">Height (cm):</label>
+            <input type="number" step="0.1" name="height" id="height" required>
 
-        <label for="weight">Weight:</label>
-        <input type="number" name="weight" id="weight" required>
+            <label for="chest">Chest (cm):</label>
+            <input type="number" step="0.1" name="chest" id="chest">
 
-        <label for="height">Height:</label>
-        <input type="number" name="height" id="height" required>
+            <label for="waist">Waist (cm):</label>
+            <input type="number" step="0.1" name="waist" id="waist">
 
-        <label for="chest">Chest:</label>
-        <input type="number" name="chest" id="chest">
+            <label for="hips">Hips (cm):</label>
+            <input type="number" step="0.1" name="hips" id="hips">
 
-        <label for="waist">Waist:</label>
-        <input type="number" name="waist" id="waist">
+            <label for="goal">Your Weight Goal (kg):</label>
+            <input type="number" step="0.1" name="goal" id="goal">
 
-        <label for="hips">Hips:</label>
-        <input type="number" name="hips" id="hips">
+            <!-- Calorie Calculator Information -->
 
-        <label for="goal">Your weight goal:</label>
-        <input type="text" name="goal" id="goal">
+            <h3>Calorie Calculator Information</h3>
 
-        <button type="submit">Add Measurement</button>
+            <label for="age">Age:</label>
+            <input type="number" name="age" id="age"
+                   min="18" max="100" required>
 
-    </form>
+            <label for="gender">Gender:</label>
+            <select name="gender" id="gender" required>
+                <option value="">Select Gender</option>
+                <option value="female">Female</option>
+                <option value="male">Male</option>
+            </select>
 
-    <div class="image-section">
-        <img src="/images/image.png" alt="Body Measurements">
+            <label for="activityLevel">Activity Level:</label>
+            <select name="activityLevel" id="activityLevel" required>
+                <option value="">Select Activity Level</option>
+                <option value="1.2">Sedentary (Little or no exercise)</option>
+                <option value="1.375">Lightly Active (1-3 days/week)</option>
+                <option value="1.55">Moderately Active (3-5 days/week)</option>
+                <option value="1.725">Very Active (6-7 days/week)</option>
+                <option value="1.9">Extra Active (Intense daily exercise)</option>
+            </select>
+
+            <button type="submit">Add Measurement</button>
+
+        </form>
+
+        <!-- Measurement Guide -->
+
+        <div class="image-section">
+            <img src="/images/body-measurement.png"
+                 alt="Body Measurement Guide">
+        </div>
+
     </div>
 
-</div>
-            <h2>Your Body Measurements</h2>
 
-<div class="measurements-container">
-    <% measurements.forEach(measurement => { %>
+    
 
-        <div class="measurement-card">
+   
 
-            <h2><%= measurement.date.toDateString() %></h3>
-            <!-- Display the body measurements / strong to make the label is bold -->
-            <p><strong>Weight:</strong> <%= measurement.weight %> kg</p>
-            <p><strong>Height:</strong> <%= measurement.height %> cm</p>
-            <p><strong>Chest:</strong> <%= measurement.chest %> cm</p>
-            <p><strong>Waist:</strong> <%= measurement.waist %> cm</p>
-            <p><strong>Hips:</strong> <%= measurement.hips %> cm</p>
-            <p><strong>Goal:</strong> <%= measurement.goal %></p>
-            <% if(measurement.weightChange !== undefined ) {  %>
-            <p><strong>Weight Change:</strong> <b class="<%= measurement.weightChange > 0 ? 'up' : 'down' %>"><%= measurement.weightChange || 0 %></b> kg</p>
-            <% if (measurement.weightChange > 0) { %>
-                <p class="up">Weight increased</p>
-            <% } else if (measurement.weightChange < 0) { %>
-                <p class="down">Well done! Keep up the good work!</p>
-            <% } %>
-            <% } %>
-            <div class="buttons">
+    <!-- Body Measurements History -->
 
-                <form action="/measurements/<%= measurement._id %>?_method=DELETE" method="POST">
-                    <button type="submit" class="delete-btn">
-                        Delete
-                    </button>
-                </form>
+    <h2>❚█ Your Body Measurements record █❚</h2>
 
-                <form action="/measurements/edit/<%= measurement._id %>" method="GET">
-                    <button type="submit" class="edit-btn">
-                        Edit
-                    </button>
-                </form>
+    <div class="measurements-container">
+
+        <% measurements.forEach(measurement => { %>
+
+            <div class="measurement-card">
+
+                <h2><%= measurement.date.toDateString() %></h2>
+
+                <p><strong>Weight:</strong> <%= measurement.weight %> kg</p>
+
+                <p><strong>Height:</strong> <%= measurement.height %> cm</p>
+
+                <p><strong>Chest:</strong> <%= measurement.chest %> cm</p>
+
+                <p><strong>Waist:</strong> <%= measurement.waist %> cm</p>
+
+                <p><strong>Hips:</strong> <%= measurement.hips %> cm</p>
+
+                <p><strong>Goal:</strong> <%= measurement.goal %> kg</p>
+                <p><strong>Activity Level:</strong> <%= measurement.activityLevel %></p>
+                <p><strong>Gender:</strong> <%= measurement.gender %></p>
+                <p><strong>Age:</strong> <%= measurement.age %></p>
+
+                <% if (measurement.weightChange !== undefined) { %>
+
+                    <p>
+                        <strong>Weight Change:</strong>
+
+                        <b class="<%= measurement.weightChange > 0 ? 'up' : 'down' %>">
+                            <%= measurement.weightChange %>
+                        </b> kg
+                    </p>
+
+                    <% if (measurement.weightChange > 0) { %>
+
+                        <p class="up">Weight increased</p>
+
+                    <% } else if (measurement.weightChange < 0) { %>
+
+                        <p class="down">
+                            Well done! Keep up the good work!
+                        </p>
+
+                    <% } %>
+
+                <% } %>
+
+                <div class="buttons">
+
+                    <form action="/measurements/<%= measurement._id %>?_method=DELETE"
+                          method="POST">
+
+                        <button type="submit" class="delete-btn">
+                            Delete
+                        </button>
+
+                    </form>
+
+                    <form action="/measurements/edit/<%= measurement._id %>"
+                          method="GET">
+
+                        <button type="submit" class="edit-btn">
+                            Edit
+                        </button>
+
+                    </form>
+
+                </div>
 
             </div>
 
-        </div>
+        <% }) %>
 
-    <% }) %>
-</div>
+    </div>
 
 </body>
 </html>

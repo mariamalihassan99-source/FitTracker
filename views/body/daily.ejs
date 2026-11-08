@@ -9,7 +9,7 @@
     <title>Daily Tracker | FitTrack</title>
 
     <link rel="stylesheet" href="/css/style.css">
-
+    <link rel="stylesheet" href="/css/dailyTrcker.css">
     <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
@@ -193,43 +193,61 @@
 
         <!-- Daily Progress History -->
 
-        <section class="daily-progress-entries">
+        
+<section class="daily-progress-entries">
 
-           
+    <% if (progresses && progresses.length > 0) { %>
 
-            <% if (progresses && progresses.length > 0) { %>
+        <% progresses.forEach(entry => { %>
 
-                <% progresses.forEach(entry => { %>
+            <div class="progress-record">
 
-                    <div class="progress-record">
+                <div class="record-header">
+                    <span class="record-label">DAILY PROGRESS</span>
+                    <h2>Daily Record</h2>
+                    <p>
+                        <%= new Date(entry.date).toDateString() %>
+                    </p>
+                </div>
 
-                        <h2>Daily Record</h2>
+                <div class="record-details">
 
-                        <p>
-                            <strong>Date:</strong>
-                            <%= entry.date instanceof Date
-                                ? entry.date.toDateString()
-                                : entry.date %>
-                        </p>
+                    <div class="record-detail">
+                        <span>Weight</span>
+                        <strong><%= entry.weight || '--' %> kg</strong>
+                    </div>
 
-                        
-                    <a href="/daily/history">View Full History</a>  
+                    <div class="record-detail">
+                        <span>Calories</span>
+                        <strong><%= entry.caloriesBurned || 0 %> kcal</strong>
+                    </div>
 
-                <% }) %>
+                    <div class="record-detail">
+                        <span>Water</span>
+                        <strong><%= entry.waterAmount || 0 %> ml</strong>
+                    </div>
 
-            <% } else { %>
+                    <div class="record-detail">
+                        <span>Steps</span>
+                        <strong><%= entry.steps || 0 %></strong>
+                    </div>
 
-                <p class="no-records">
-                    No daily progress records yet.
-                    Start tracking your fitness journey!
-                </p>
-                
+                </div>
 
-            <% } %>
+                <a href="/daily/history" class="history-btn">
+                    View Full History →
+                </a>
 
-        </section>
+            </div>
 
-    </main>
+        <% }) %>
 
-</body>
-</html>
+    <% } else { %>
+
+        <p class="no-records">
+            No daily progress records yet. Start tracking your journey!
+        </p>
+
+    <% } %>
+
+</section>

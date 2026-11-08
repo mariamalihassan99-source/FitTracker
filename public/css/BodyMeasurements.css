@@ -1,0 +1,437 @@
+
+/* =========================================================
+   FITTRACK - BODY MEASUREMENTS
+   Blue & Silver Theme
+   ========================================================= */
+
+/* =========================================================
+   1. PAGE HEADINGS
+   ========================================================= */
+
+
+/* =========================================
+   ADD BODY MEASUREMENT PAGE
+   ========================================= */
+
+.measurement-page-title {
+    text-align: center;
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 42px;
+    margin: 5px 0 25px;
+}
+h2{
+    text-align: center;
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 36px;
+    margin: 20px 0;
+}
+/* Main layout */
+.measurement-layout {
+    width: calc(100% - 80px);
+    max-width: 1650px;
+    margin: 20px auto 50px;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 35px;
+}
+
+/* Form */
+.form-section {
+    flex: 0 0 42%;
+    min-width: 0;
+    padding: 35px 40px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    background: #FFFFFF;
+    border-radius: 28px;
+    box-shadow: 0 8px 25px rgba(49, 86, 117, 0.10);
+}
+
+.form-section label {
+    color: #315675;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.form-section input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    border: 1px solid #B8CAD8;
+    border-radius: 12px;
+    background: #F8FAFC;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 16px;
+}
+
+.form-section input:focus {
+    outline: none;
+    border-color: #527797;
+    box-shadow: 0 0 5px rgba(82, 119, 151, 0.2);
+}
+
+.form-section button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 12px;
+    background: #315675;
+    color: white;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-section button:hover {
+    background: #527797;
+}
+
+/* Guide image */
+.image-section {
+    flex: 1;
+    min-width: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.image-section img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    height: auto;
+    margin: 0;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(49, 86, 117, 0.15);
+}
+
+/* Responsive */
+@media (max-width: 950px) {
+    .measurement-layout {
+        flex-direction: column;
+        align-items: stretch;
+        width: calc(100% - 35px);
+    }
+
+    .form-section {
+        width: 100%;
+        box-sizing: border-box;
+        flex: none;
+    }
+
+    .image-section {
+        width: 100%;
+        flex: none;
+    }
+
+    .image-section img {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .measurement-page-title {
+        font-size: 30px;
+    }
+
+    .form-section {
+        padding: 25px;
+    }
+}
+
+/* =========================================================
+   3. EDIT MEASUREMENT PAGE
+   ========================================================= */
+
+.measurement-container {
+    width: calc(100% - 60px);
+    max-width: 1600px;
+    margin: 40px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* Edit form card */
+
+.measurement-container .measurement-card {
+    flex: 0 0 38%;
+    min-width: 0;
+    padding: 40px;
+    background: #FFFFFF;
+    border-radius: 30px;
+    box-shadow: 0 8px 25px rgba(49, 86, 117, 0.12);
+}
+
+.measurement-container .measurement-card h2 {
+    color: #315675;
+    text-align: center;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 30px;
+    margin: 0 0 15px;
+}
+
+.measurement-container .measurement-card > p {
+    color: #7195B5;
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
+
+/* Edit form fields */
+
+.measurement-group {
+    margin-bottom: 18px;
+}
+
+.measurement-group label {
+    display: block;
+    color: #315675;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.measurement-group input {
+    width: 100%;
+    padding: 13px 15px;
+    border: 1px solid #B8CAD8;
+    border-radius: 10px;
+    background: #F8FAFC;
+    color: #315675;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.measurement-group input:focus {
+    outline: none;
+    border-color: #527797;
+    box-shadow: 0 0 5px rgba(82, 119, 151, 0.25);
+}
+
+/* Update button */
+
+.measurement-container .measurement-card button {
+    width: 100%;
+    padding: 14px;
+    background: #315675;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.measurement-container .measurement-card button:hover {
+    background: #527797;
+}
+
+/* Edit page guide */
+
+.measurement-guide {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.measurement-guide img {
+    display: block;
+    width: 100%;
+    max-width: 950px;
+    height: auto;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(49, 86, 117, 0.15);
+}
+
+/* =========================================================
+   4. MEASUREMENT HISTORY PAGE
+   ========================================================= */
+
+/* History heading */
+
+.measurements-title {
+    color: #315675;
+    text-align: center;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 34px;
+    margin: 40px 0 25px;
+}
+
+/* History cards layout */
+
+.measurements-container {
+    width: calc(100% - 60px);
+    max-width: 1450px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    align-items: stretch;
+}
+
+/* Individual history card */
+
+.measurements-container .measurement-card {
+    min-width: 0;
+    padding: 25px;
+    background: linear-gradient(145deg, #FFFFFF, #F0F5F8);
+    border: 1px solid #D5E0E8;
+    border-radius: 20px;
+    box-shadow: 0 5px 18px rgba(49, 86, 117, 0.09);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.measurements-container .measurement-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(49, 86, 117, 0.14);
+}
+
+/* Measurement date */
+
+.measurements-container .measurement-card h2 {
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 21px;
+    margin: 0 0 15px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #D5E0E8;
+}
+
+/* Measurement information */
+
+.measurements-container .measurement-card p {
+    color: #527797;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.4;
+    margin: 8px 0;
+    overflow-wrap: anywhere;
+}
+
+.measurements-container .measurement-card strong {
+    color: #315675;
+}
+
+/* Weight change */
+
+.up {
+    color: #B94A48;
+    font-weight: bold;
+}
+
+.down {
+    color: #527797;
+    font-weight: bold;
+}
+
+/* History action buttons */
+
+.measurements-container .buttons {
+    display: flex;
+    gap: 12px;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.measurements-container .buttons form {
+    flex: 1;
+    min-width: 0;
+}
+
+.measurements-container .buttons button {
+    width: 100%;
+    padding: 12px 8px;
+    border: none;
+    border-radius: 10px;
+    background: #527797;
+    color: #FFFFFF;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.measurements-container .buttons button:hover {
+    background: #315675;
+}
+
+/* =========================================================
+   5. RESPONSIVE DESIGN
+   ========================================================= */
+
+/* Tablets */
+
+@media (max-width: 1000px) {
+
+    .measurements-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .measurement-layout,
+    .measurement-container {
+        gap: 25px;
+    }
+}
+
+/* Mobile */
+
+@media (max-width: 750px) {
+
+    .measurement-layout,
+    .measurement-container {
+        width: calc(100% - 30px);
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .form-section,
+    .measurement-container .measurement-card {
+        width: 100%;
+        flex: none;
+    }
+
+    .image-section,
+    .measurement-guide {
+        width: 100%;
+        flex: none;
+    }
+
+    .measurements-container {
+        width: calc(100% - 30px);
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small mobile screens */
+
+@media (max-width: 480px) {
+
+    .form-section,
+    .measurement-container .measurement-card {
+        padding: 22px;
+    }
+
+    .measurement-page-title,
+    .measurements-title {
+        font-size: 27px;
+    }
+
+    .measurements-container .measurement-card h2 {
+        font-size: 19px;
+    }
+}

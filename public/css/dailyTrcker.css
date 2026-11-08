@@ -1,0 +1,485 @@
+
+
+/* =================================================
+   FITTRACK DAILY TRACKER
+   Blue & Silver Theme
+   ================================================= */
+
+/* Main container */
+.daily-tracker-main {
+    max-width: 1400px;
+    margin: 35px auto;
+    padding: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* =================================================
+   PAGE HEADER
+   ================================================= */
+
+.daily-tracker-header {
+    margin-bottom: 30px;
+}
+
+.daily-tracker-header h2 {
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 36px;
+    margin-bottom: 8px;
+}
+
+.daily-tracker-header p {
+    color: #7195B5;
+    font-size: 17px;
+}
+
+/* =================================================
+   DAILY SUMMARY CARDS
+   ================================================= */
+
+.daily-tracker-content {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 20px;
+    margin-bottom: 35px;
+}
+
+.daily-tracker-entry {
+    padding: 25px 18px;
+    background: #FFFFFF;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(49, 86, 117, 0.10);
+    transition: transform 0.3s ease;
+}
+
+.daily-tracker-entry:hover {
+    transform: translateY(-5px);
+}
+
+.daily-tracker-entry span {
+    font-size: 30px;
+}
+
+.daily-tracker-entry p {
+    color: #7195B5;
+    font-size: 15px;
+    margin: 15px 0 8px;
+}
+
+.daily-tracker-entry h2 {
+    color: #315675;
+    font-size: 23px;
+    margin: 0;
+}
+
+/* =================================================
+   DAILY PROGRESS FORM
+   ================================================= */
+
+.daily-tracker-form {
+    width: 100%;
+    padding: 35px;
+    background: #FFFFFF;
+    border-radius: 22px;
+    box-shadow: 0 5px 20px rgba(49, 86, 117, 0.10);
+}
+
+.daily-tracker-form h2 {
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 32px;
+    margin: 0 0 30px;
+}
+
+/* Form columns */
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 30px;
+    row-gap: 25px;
+}
+
+/* Form fields */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    min-width: 0;
+}
+
+.form-group label {
+    color: #315675;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    min-width: 0;
+    padding: 16px;
+    border: 1px solid #B8CAD8;
+    border-radius: 14px;
+    background: #F8FAFC;
+    color: #315675;
+    font-family: inherit;
+    font-size: 16px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.form-group input::placeholder {
+    color: #8A9EAE;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #527797;
+    box-shadow: 0 0 6px rgba(82, 119, 151, 0.2);
+}
+
+/* =================================================
+   WORKOUT CHECKBOX
+   ================================================= */
+
+.workout-checkbox {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 25px 0;
+    color: #315675;
+    font-size: 17px;
+    cursor: pointer;
+}
+
+.workout-checkbox input {
+    width: 19px;
+    height: 19px;
+    accent-color: #315675;
+    cursor: pointer;
+}
+
+/* =================================================
+   SAVE BUTTON
+   ================================================= */
+
+.save-btn {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 30px;
+    background: #315675;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 13px;
+    font-family: inherit;
+    font-size: 17px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s ease;
+   
+}
+
+.save-btn:hover {
+    background: #527797;
+    transform: translateY(-2px);
+}
+
+/* =================================================
+   DAILY PROGRESS HISTORY
+   ================================================= */
+
+
+/* =========================================
+   DAILY PROGRESS RECORDS
+   ========================================= */
+
+.daily-progress-entries {
+    max-width: 1400px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+/* Individual record */
+.progress-record {
+    min-width: 0;
+    padding: 25px;
+    background: #FFFFFF;
+    border: 1px solid #D5E0E8;
+    border-radius: 18px;
+    box-shadow: 0 5px 18px rgba(49, 86, 117, 0.08);
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.progress-record:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(49, 86, 117, 0.13);
+}
+
+/* Record heading */
+.record-header {
+    padding-bottom: 18px;
+    border-bottom: 1px solid #D5E0E8;
+}
+
+.record-label {
+    color: #7195B5;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.record-header h2 {
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 24px;
+    margin: 10px 0 5px;
+}
+
+.record-header p {
+    color: #7195B5;
+    font-size: 15px;
+    margin: 0;
+}
+
+/* Record information */
+.record-details {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin: 20px 0;
+}
+
+.record-detail {
+    padding: 14px;
+    background: #F0F5F8;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.record-detail span {
+    color: #7195B5;
+    font-size: 14px;
+}
+
+.record-detail strong {
+    color: #315675;
+    font-size: 18px;
+}
+
+/* History button */
+.history-btn {
+    display: block;
+    margin-top: auto;
+    padding: 13px;
+    background: #315675;
+    color: #FFFFFF;
+    border-radius: 10px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 600;
+    transition: background 0.3s;
+}
+
+.history-btn:hover {
+    background: #527797;
+}
+
+/* Empty records */
+.no-records {
+    grid-column: 1 / -1;
+    padding: 35px;
+    background: #FFFFFF;
+    color: #527797;
+    text-align: center;
+    border-radius: 16px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .daily-progress-entries {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 650px) {
+    .daily-progress-entries {
+        grid-template-columns: 1fr;
+        margin: 25px 15px;
+    }
+}
+
+/* =================================================
+   RESPONSIVE DESIGN
+   ================================================= */
+
+@media (max-width: 1050px) {
+    .daily-tracker-content {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .daily-tracker-main {
+        padding: 18px;
+    }
+
+    .daily-tracker-content {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .daily-tracker-form {
+        padding: 25px;
+    }
+
+    .daily-tracker-header h2 {
+        font-size: 29px;
+    }
+}
+
+@media (max-width: 480px) {
+    .daily-tracker-content {
+        grid-template-columns: 1fr;
+    }
+
+    .daily-tracker-form {
+        padding: 20px;
+    }
+
+    .save-btn {
+        width: 100%;
+    }
+}
+
+
+
+
+/* =================================================
+   FITTRACK DAILY HISTORY
+   Blue & Silver Theme
+   ================================================= */
+
+.daily-history-container {
+    max-width: 1400px;
+    margin: 45px auto;
+    padding: 25px;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+/* Page heading */
+.daily-history-title {
+    margin-bottom: 30px;
+    color: #315675;
+    font-family: 'Bodoni Moda', serif;
+    font-size: 36px;
+    text-align: left;
+}
+
+/* Table wrapper */
+.daily-history-table-wrapper {
+    width: 69%;
+    overflow-x: auto;
+    background: #FFFFFF;
+    padding: 20px;
+    border-radius: 25px;
+    box-shadow: 0 8px 25px rgba(49, 86, 117, 0.12);
+}
+
+/* History table */
+.daily-history-table {
+    width: 90%;
+    min-width: 800px;
+    border-collapse: collapse;
+    text-align: center;
+   
+}
+
+/* Table heading */
+.daily-history-table thead {
+    background: linear-gradient(135deg, #315675, #527797);
+    color: #FFFFFF;
+    white-space: normal;
+}
+
+.daily-history-table th {
+    padding: 15px 15px;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: normal;
+}
+
+/* Table cells */
+.daily-history-table td {
+    padding: 17px 15px;
+    color: #315675;
+    font-size: 15px;
+    border-bottom: 1px solid #D5E0E8;
+}
+
+/* Alternating rows */
+.daily-history-table tbody tr:nth-child(even) {
+    background: #E8EEF2;
+  
+}
+
+.daily-history-table tbody tr:nth-child(odd) {
+    background: #FFFFFF;
+}
+
+/* Hover effect */
+.daily-history-table tbody tr:hover {
+    background: #D5E0E8;
+    transition: 0.3s;
+}
+
+/* Last row */
+.daily-history-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+/* Empty history message */
+.empty-history {
+    padding: 30px;
+    color: #7195B5;
+    text-align: center;
+    font-size: 18px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .daily-history-container {
+        margin: 25px auto;
+        padding: 15px;
+    }
+
+    .daily-history-title {
+        font-size: 28px;
+    }
+
+    .daily-history-table-wrapper {
+        padding: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .daily-history-title {
+        font-size: 24px;
+    }
+
+    .daily-history-table {
+        min-width: 600px;
+    }
+}

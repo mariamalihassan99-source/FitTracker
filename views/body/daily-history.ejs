@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="/css/style.css">
-
+    <link rel="stylesheet" href="/css/dailyTrcker.css">
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&family=Edu+QLD+Hand:wght@400..700&family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap');
 </style>
@@ -14,35 +14,54 @@
 <body>
     <%- include('../partials/navbar') %>
 
-   <h2> Your Daily History</h2>
-   <table>
-       <thead>
-           <tr>
-               <th>Date</th>
-               <th>Workout Type</th>
-               <th>Duration</th>
-               <th>Calories Burned</th>
-               <th>Weight</th>
-               <th>Water Intake</th>
-               <th>Sleep Hours</th>
-               <th>Steps</th>
-           </tr>
-       </thead>
-       <tbody>
-           <% progresses.forEach(progress => { %>
-               <tr>
-                   <td><%= progress.date.toDateString() %></td>
-                   <td><%= progress.workoutType %></td>
-                   <td><%= progress.duration %></td>
-                   <td><%= progress.caloriesBurned %></td>
-                   <td><%= progress.weight %></td>
-                   <td><%= progress.waterAmount %></td>
-                   <td><%= progress.sleepHours %></td>
-                   <td><%= progress.steps %></td>
-               </tr>
-           <% }) %>
-       </tbody>
-   </table>
-    
+   <main class="daily-history-container">
+
+    <h2 class="daily-history-title">Your Daily History</h2>
+
+    <div class="daily-history-table-wrapper">
+
+        <% if (progresses && progresses.length > 0) { %>
+
+            <table class="daily-history-table">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Workout Type</th>
+                        <th>Duration</th>
+                        <th>Calories Burned</th>
+                        <th>Weight</th>
+                        <th>Water Intake</th>
+                        <th>Sleep Hours</th>
+                        <th>Steps</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <% progresses.forEach(progress => { %>
+                        <tr>
+                            <td><%= progress.date.toDateString() %></td>
+                            <td><%= progress.workoutType %></td>
+                            <td><%= progress.duration %> min</td>
+                            <td><%= progress.caloriesBurned %> kcal</td>
+                            <td><%= progress.weight %> kg</td>
+                            <td><%= progress.waterAmount %> ml</td>
+                            <td><%= progress.sleepHours %> hrs</td>
+                            <td><%= progress.steps %></td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+
+        <% } else { %>
+
+            <p class="empty-history">
+                No daily history available yet.
+            </p>
+
+        <% } %>
+
+    </div>
+
+</main>
 </body>
 </html>
